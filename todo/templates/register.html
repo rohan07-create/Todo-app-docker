@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+  {% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="User Registration">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Register</title>
+    
+<link rel="stylesheet" href="{%static 'register.css' %}" media="screen">
+{% endblock head %}
+  </head>
+  <body class="u-body">{% block body %}
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" data-image-width="150" data-image-height="100" id="sec-1807">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-text u-text-1">User Registration</h1>
+        <div class="rf u-form u-login-control u-form-1">
+          <form action="signup" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-30 u-form-vertical u-inner-form" source="custom" name="form-4" style="padding: 10px;">
+            {% csrf_token %}
+            
+            <div class="u-form-group u-form-name u-border-9 u-border-white u-input u-input-rectangle u-radius-50 u-white u-input-1">
+              <label for="username-22e3" class="u-form-control-hidden u-label "></label>
+              {{ form.username }}
+            </div>
+            <div class="u-form-group u-form-password u-border-9 u-border-white u-input u-input-rectangle u-radius-50 u-white u-input-2">
+              <label for="password" class="u-form-control-hidden u-label"></label>
+              {{ form.password1 }}
+            </div>
+            <div class="u-form-group u-form-password u-border-9 u-border-white u-input u-input-rectangle u-radius-50 u-white u-input-2 ">
+              <label for="password-22e3" class="u-form-control-hidden u-label "></label>
+              {{ form.password2 }}
+            </div>
+
+            <div class="u-align-right u-form-group u-form-submit">
+              <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-50 u-btn-1">Sign Up</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+            <input type="hidden" id="siteId" name="siteId" value="504564">
+            <input type="hidden" id="pageId" name="pageId" value="504628">
+            <input type="hidden" value="" name="recaptchaResponse">
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-a0bb"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Developed by Rohan Chourasiya</p>
+      </div></footer>
+
+  {% endblock body %}
+  </body>
+</html>

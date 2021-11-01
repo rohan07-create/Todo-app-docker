@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  django_guni_serv:
+    build:
+      context: .
+    env_file: 
+      - .env
+    volumes:
+      - static:/static
+    depends_on:
+      - pg_db
+  
+  nginx_serv:
+    build: ./nginx
+    volumes:
+      - static:/static
+    ports:
+      - "80:80"
+    depends_on:
+      - django_guni_serv
+  
+  pg_db:
+    image: postgres
+    env_file: 
+      - .env
+    expose:
+      - "5432"
+
+
+volumes:
+  static:

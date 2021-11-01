@@ -1,0 +1,102 @@
+{% extends 'base.html' %} 
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+  {% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="INTUITIVE">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <title>Update</title>
+    <link rel="stylesheet" href="{%static 'update.css' %}" media="screen">
+  {% endblock head %}
+  </head>
+  <body class="u-body">
+  
+  {% block body %}
+
+{% comment %} 
+<div class="container-fluid row">
+<div class="col-xs-5 shadow-lg p-3 mb-5 bg-white rounded">
+         <div class="form-group">
+         <form  method="POST"> 
+              {% csrf_token %}
+                {{ form.as_p }}
+          <input type="submit" value="Update" class="btn btn-primary">
+          <a class="btn btn-danger" value="" href="{% url 'task' %}">Cancel</a>
+          </form>
+          </div>
+        </div>
+
+</div>
+</div> {% endcomment %}
+
+
+    <section class="u-clearfix u-section-1" id="sec-4b7e">
+    
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-grey-10 u-group u-radius-50 u-shape-round u-group-1">
+          <div class="u-container-layout u-valign-top u-container-layout-1"><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 45.532 45.532" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-862c"></use></svg><svg class="u-svg-content" viewBox="0 0 45.532 45.532" x="0px" y="0px" id="svg-862c" style="enable-background:new 0 0 45.532 45.532;"><g><path d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z"/>
+</g></svg></span>
+            <h3 class="u-align-center u-text u-text-default u-text-1">Update ToDo '{{ti}}'</h3>
+            <div class="u-expanded-width u-form u-login-control u-form-1">
+              <p> {{alert}}</p>
+              <form  method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-30 u-form-vertical u-inner-form" source="custom" name="form-3" style="padding: 10px;">
+                {% csrf_token %}
+                <div class="u-form-group u-form-name">
+                  <label for="Title" class="u-form-control-hidden u-label"></label>
+                  <input type="text" placeholder="Edit Title" id="title" name="title" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-43 u-white" >
+                </div>
+                <div class="u-form-group u-form-password">
+                  <label for="password" class="u-form-control-hidden u-label"></label>
+                  <input type="text" placeholder="Edit Description" id="desc" name="desc" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-43 u-white" >
+                </div>
+                <div class="u-align-left u-form-group u-form-submit">
+                  <a href="#" class=" u-btn u-btn-round  u-button-style u-radius-50 ">Update</a>
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+
+                </div>
+              </form>
+                   <a href="/" class="u-btn-1 u-btn-round  u-button-style u-radius-50 btn-danger">Cancel</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+
+
+
+
+
+
+<style>
+
+</style>
+
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer  footer" id="sec-a0bb"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Developed by Rohan Chourasiya</p>
+      </div></footer>
+  {% endblock body %}
+   </body>
+</html>
